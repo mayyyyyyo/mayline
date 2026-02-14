@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Mahishya & Royan 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* ===== APP FRAME (UKURAN HP) ===== */
+    .app {
+      max-width: 430px;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ===== HEART BACKGROUND ===== */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255, 105, 180, 0.6);
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    /* ===== POPUP ===== */
+    .popup {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .popup-box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      width: 85%;
+      animation: fadeIn 1s;
+    }
+
+    .popup-box h2 {
+      color: #ff4f9a;
+      margin-bottom: 20px;
+    }
+
+    .popup-box button {
+      padding: 10px 22px;
+      margin: 8px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #ff4f9a;
+      color: white;
+    }
+
+    #noBtn {
+      background: #ddd;
+      position: absolute;
+    }
+
+    /* ===== SLIDES ===== */
+    .slides {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      transition: transform 1s ease;
+    }
+
+    .slide {
+      width: 100%;
+      height: 100%;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #ff4f9a;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 340px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      border-radius: 25px;
+      border: none;
+      background: #ff4f9a;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    .fade {
+      animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- MUSIK ROMANTIS (ONLINE, TANPA FOLDER) -->
+  <audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2023/02/14/audio_3f3cbb9c18.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- POPUP AWAL -->
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <h2>
+        Selamat Valentine Sayang ❤️<br><br>
+        Kamu mau terus sama aku nggak?
+      </h2>
+      <button id="yesBtn">YES 💖</button>
+      <button id="noBtn">NO 🙃</button>
+    </div>
+  </div>
+
+  <!-- SLIDES -->
+  <div class="slides" id="slides">
+
+    <!-- SLIDE 1 -->
+    <div class="slide">
+      <h1>Happy Valentine 💖</h1>
+      <p>
+        Ini Valentine kedua kita bareng…<br>
+        Aku bersyukur banget punya kamu, Royan 🥺❤️<br><br>
+        Terima kasih sudah selalu ada.
+      </p>
+      <button class="btn" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide fade">
+      <h2>Tentang Kita 💕</h2>
+      <p>
+        Aku nggak tahu masa depan bakal seperti apa,<br>
+        tapi satu hal yang aku yakin,<br>
+        aku mau menjalaninya sama kamu.<br><br>
+        Pelan-pelan, bareng-bareng 💗
+      </p>
+      <button class="btn" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide fade">
+      <h2>Untuk Kamu 🤍</h2>
+      <p>
+        Berapa banyak kenangan yang kita punya?<br>
+        Tak terhitung jumlahnya.<br><br>
+        Setiap detik bareng kamu itu berarti.<br><br>
+        I looooveeee uuuuu ❤️❤️❤️
+      </p>
+      <button class="btn" onclick="nextSlide()">Lanjut</button>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide fade">
+      <h2>Dari Aku 💌</h2>
+      <p>
+        Terima kasih sudah jadi bagian paling
+        indah di hidupku.<br><br>
+        Dari Mahishya,<br>
+        yang selalu sayang sama Royan ❤️
+      </p>
+      <button class="btn" onclick="reply()">Balas Sekarang 💌</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  let currentSlide = 0;
+
+  function nextSlide() {
+    currentSlide++;
+    document.getElementById("slides").style.transform =
+      `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function reply() {
+    window.location.href =
+      "https://wa.me/6285788063510?text=Iyaa%20aku%20mau%20terus%20sama%20kamu%20❤️%20Happy%20Valentine%20sayang!";
+  }
+
+  // Tombol NO kabur
+  const noBtn = document.getElementById("noBtn");
+  noBtn.addEventListener("mouseover", () => {
+    noBtn.style.left = Math.random() * 70 + "%";
+    noBtn.style.top = Math.random() * 70 + "%";
+  });
+
+  // Klik YES
+  document.getElementById("yesBtn").onclick = () => {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("music").play();
+  };
+
+  // Heart generator
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "%";
+    heart.style.fontSize = (12 + Math.random() * 18) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.querySelector(".app").appendChild(heart);
+
+    setTimeout(() => heart.remove(), 8000);
+  }, 300);
+</script>
+
+</body>
+</html>
